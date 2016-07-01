@@ -17,7 +17,7 @@ Plugin 'henrik/vim-indexed-search'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
@@ -32,6 +32,16 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'EinfachToll/DidYouMean'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'scwood/vim-hybrid'
+Plugin 'vim-perl/vim-perl'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'c9s/perlomni.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'xero/sourcerer.vim'
+Plugin 'jacoborus/tender.vim'
+Plugin 'juanedi/predawn.vim'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -91,6 +101,9 @@ set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 
+"Unset the CtrlP max_file limit
+let g:ctrlp_max_files = 0
+
 "load ftplugins and indent files
 filetype plugin on
 filetype indent on
@@ -107,7 +120,9 @@ endif
 "tell the term has 256 colors
 "set t_Co=256
 
-colorscheme github
+colorscheme hybrid
+set background=dark
+
 
 "hide buffers when not displayed
 set hidden
@@ -156,9 +171,10 @@ set statusline+=%{StatuslineTrailingSpaceWarning()}
 
 set statusline+=%{StatuslineLongLineWarning()}
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" syntastic stuff
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 "display a warning if &paste is set
 set statusline+=%#error#
@@ -287,7 +303,12 @@ function! s:Median(nums)
 endfunction
 
 "syntastic settings
-let syntastic_stl_format = '[Syntax: %E{line:%fe }%W{#W:%w}%B{ }%E{#E:%e}]'
+" let syntastic_stl_format = '[Syntax: %E{line:%fe }%W{#W:%w}%B{ }%E{#E:%e}]'
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
@@ -295,12 +316,16 @@ let g:NERDTreeWinSize = 40
 let g:NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
+"buffer close keeping the window
+command Bd bp | sp | bn | bd
+
 "explorer mappings
 nnoremap <f1> :BufExplorer<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TagbarToggle<cr>
 nnoremap <f4> :NERDTreeFind<cr>
 nnoremap <c-f> :CtrlP<cr>
+"nnoremap <c-f> :Unite file_rec/async<cr>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -359,6 +384,8 @@ autocmd BufReadPost fugitive://*
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 
+"auto command to trim trailing spaces on save
+" autocmd BufWritePre * :%s/\s\+$//e
 
 "ruby settings
 let g:ruby_indent_access_modifier_style = 'outdent'
