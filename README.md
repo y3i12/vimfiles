@@ -1,10 +1,10 @@
-This is my ~/.vim dir and _this_, dear reader, is a horse:
+This is my ~/.vim dir and _this_, dear reader, is a unicorn:
 
                    ,
-                  / \,,_  .'|
-               ,{{| /}}}}/_.'
-              }}}}` '{{'  '.
-            {{{{{    _   ;, \
+                  / \,,_  .'| /
+               ,{{| /}}}}/_.'/
+              }}}}` '{{'  ;//.
+            {{{{{    _   / /\
          ,}}}}}}    /o`\  ` ;)
         {{{{{{   /           (
         }}}}}}   |            \
