@@ -34,6 +34,9 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'scwood/vim-hybrid'
 Plugin 'vim-perl/vim-perl'
+Plugin 'vim-airline/vim-airline'
+Plugin 'luochen1990/rainbow'
+Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'c9s/perlomni.vim'
@@ -42,7 +45,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'xero/sourcerer.vim'
 Plugin 'jacoborus/tender.vim'
 Plugin 'juanedi/predawn.vim'
-Plugin 'vim-airline/vim-airline'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -117,6 +119,9 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-c> :Bd<CR>
+
+"Activate the parenthesis rainbownization
+let g:rainbow_active = 1
 
 "load ftplugins and indent files
 filetype plugin on
