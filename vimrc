@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/csapprox'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'scrooloose/nerdtree'
@@ -42,6 +42,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'xero/sourcerer.vim'
 Plugin 'jacoborus/tender.vim'
 Plugin 'juanedi/predawn.vim'
+Plugin 'vim-airline/vim-airline'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -102,7 +103,20 @@ set sidescrolloff=7
 set sidescroll=1
 
 "Unset the CtrlP max_file limit
-let g:ctrlp_max_files = 0
+let g:ctrlp_max_files  = 0
+"Increase CtrlP window size
+let g:ctrlp_max_height = 25
+
+"Enable tabline
+set showtabline=2
+"Enable airline-tabline
+let g:airline#extensions#tabline#enabled = 1
+"Nicer fonts for airline
+"let g:airline_powerline_fonts = 1
+"Tab cycling shortcuts
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-c> :Bd<CR>
 
 "load ftplugins and indent files
 filetype plugin on
