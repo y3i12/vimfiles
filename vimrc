@@ -42,9 +42,16 @@ Plugin 'Shougo/unite.vim'
 Plugin 'c9s/perlomni.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
+
+"Themes
 Plugin 'xero/sourcerer.vim'
 Plugin 'jacoborus/tender.vim'
 Plugin 'juanedi/predawn.vim'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'carakan/new-railscasts-theme'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'danilo-augusto/vim-afterglow'
+Plugin 'flazz/vim-colorschemes'
 
 "All of your Plugins must be added before the following line
 call vundle#end()
@@ -137,9 +144,9 @@ if !has("nvim")
 endif
 
 "tell the term has 256 colors
-"set t_Co=256
+set t_Co=256
 
-colorscheme hybrid
+colorscheme monokain
 set background=dark
 
 
@@ -453,3 +460,10 @@ function! s:checkForLnum() abort
         call cursor(lnum, 1)
     endif
 endfunction
+
+
+"File Extensions!
+au BufNewFile,BufRead *.comp set ft=mason
+au BufNewFile,BufRead *.json set ft=mason
+au BufNewFile,BufRead *.html set ft=mason
+au BufNewFile,BufRead *.htm  set ft=mason
