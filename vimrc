@@ -9,22 +9,22 @@ call vundle#begin()
 "let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'jlanzarotta/bufexplorer'
+"Plugin 'jlanzarotta/bufexplorer'
 Plugin 'godlygeek/csapprox'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'henrik/vim-indexed-search'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'scrooloose/nerdcommenter'
 "Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-rails'
+"Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-ragtag'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'mbbill/undotree'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+"Plugin 'mbbill/undotree'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -40,7 +40,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'c9s/perlomni.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
 
 "Themes
@@ -68,6 +68,9 @@ set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
 
 set number      "show line numbers
+
+set splitbelow
+set splitright
 
 "display tabs and trailing spaces
 set list
